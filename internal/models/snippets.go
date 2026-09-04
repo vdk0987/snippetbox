@@ -16,4 +16,3 @@ type Snippet struct {
 type SnippetModel struct {
 	DB *sql.DB
 }
-
