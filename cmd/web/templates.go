@@ -1,16 +1,16 @@
 package main
 
 import (
-	"path/filepath"
 	"html/template"
-	
+	"path/filepath"
+
 	"github.com/vdk0987/snippetbox/internal/models"
 )
 
-func newTemplateCache() (map[string]*template.Template, error){
+func newTemplateCache() (map[string]*template.Template, error) {
 	cache := map[string]*template.Template{}
 
-	pages, err := filepath.Glob(".ui/html/pages/*.tmpl")
+	pages, err := filepath.Glob("./ui/html/pages/*.tmpl")
 	if err != nil {
 		return nil, err
 	}
@@ -19,8 +19,8 @@ func newTemplateCache() (map[string]*template.Template, error){
 		name := filepath.Base(page)
 
 		files := []string{
-			".ui/html/base.tmpl",
-			".ui/html/partials/nav.tmpl",
+			"./ui/html/base.tmpl",
+			"./ui/html/partials/nav.tmpl",
 			page,
 		}
 
